@@ -6,6 +6,7 @@ apply plugin: 'kotlin-kapt'
 
 buildscript {
     repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         jcenter()
         mavenCentral()
@@ -28,14 +29,14 @@ allprojects {
     }
 }
 //LTSDK
-def LTSDK_version = "5.3.2.7"
+def LTSDK_version = "5.3.2.8"
 android {
-    compileSdkVersion 34
+    compileSdkVersion 35
 
     defaultConfig {
         applicationId "com.loftechs.sample"
+        targetSdkVersion 35
         minSdkVersion 26
-        targetSdkVersion 34
         versionName project.VERSION_NAME
         versionCode project.VERSION_CODE as int
 
@@ -138,7 +139,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
 
     // https://mvnrepository.com/artifact/org.conscrypt/conscrypt-android
-    runtimeOnly 'org.conscrypt:conscrypt-android:2.5.2'
+    runtimeOnly 'org.conscrypt:conscrypt-android:2.5.3'
 
     def appcompat_version = "1.7.0"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
@@ -151,4 +152,3 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
-
