@@ -29,7 +29,7 @@ allprojects {
     }
 }
 //LTSDK
-def LTSDK_version = "5.3.2.8"
+def LTSDK_version = "5.3.2.9"
 android {
     compileSdkVersion 35
 
